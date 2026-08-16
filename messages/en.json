@@ -1,0 +1,12 @@
+{
+  "Metadata": {
+    "title": "Eduardo | Portfolio",
+    "description": "Software developer"
+  },
+  "HomePage": {
+    "tagline": "Software developer"
+  },
+  "LocaleSwitcher": {
+    "label": "Language"
+  }
+}
