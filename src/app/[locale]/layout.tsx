@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { routing } from "@/i18n/routing";
+import { parseTheme, THEME_COOKIE } from "@/lib/theme";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -39,12 +42,17 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const cookieStore = await cookies();
+  const theme = parseTheme(cookieStore.get(THEME_COOKIE)?.value);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-theme={theme}>
       <body className={geistSans.variable}>
         <NextIntlClientProvider messages={messages}>
-          <LocaleSwitcher />
+          <div className="site-chrome">
+            <LocaleSwitcher />
+            <ThemeSwitcher theme={theme} />
+          </div>
           {children}
         </NextIntlClientProvider>
       </body>

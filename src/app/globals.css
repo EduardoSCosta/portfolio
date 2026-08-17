@@ -1,4 +1,5 @@
-:root {
+:root,
+html[data-theme="dark"] {
   --bg: #08090a;
   --bg-raised: #0e0f11;
   --surface: #101113;
@@ -20,16 +21,49 @@
   --success: #3dd68c;
   --danger: #f2555a;
 
+  --shadow-card:
+    0 1px 2px rgba(0, 0, 0, 0.5), 0 18px 40px -24px rgba(0, 0, 0, 0.9);
+
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --bg: #f3f4f6;
+  --bg-raised: #e8eaed;
+  --surface: #ffffff;
+  --surface-hover: #f0f1f3;
+
+  --border: #d8dbe0;
+  --border-strong: #c4c8cf;
+
+  --text: #111318;
+  --text-secondary: #4b5059;
+  --text-muted: #6b7280;
+
+  --accent: #c2410c;
+  --accent-hover: #ad390a;
+  --accent-active: #8f2f08;
+  --accent-text: #9a3412;
+  --accent-fg: #ffffff;
+
+  --success: #059669;
+  --danger: #dc2626;
+
+  --shadow-card:
+    0 1px 2px rgba(0, 0, 0, 0.06), 0 18px 40px -24px rgba(0, 0, 0, 0.12);
+
+  color-scheme: light;
+}
+
+:root {
   --radius-sm: 6px;
   --radius: 8px;
   --radius-lg: 12px;
 
   --header-h: 60px;
 
-  --shadow-card:
-    0 1px 2px rgba(0, 0, 0, 0.5), 0 18px 40px -24px rgba(0, 0, 0, 0.9);
-
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --theme-duration: 0.25s;
 
   --font-sans:
     var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
@@ -56,6 +90,21 @@ html {
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    transition:
+      background-color var(--theme-duration) var(--ease-out),
+      color var(--theme-duration) var(--ease-out);
+  }
+
+  .theme-switcher,
+  .locale-switcher__link {
+    transition: color var(--theme-duration) var(--ease-out);
+  }
+
+  :focus-visible {
+    transition: outline-color var(--theme-duration) var(--ease-out);
   }
 }
 
@@ -116,11 +165,38 @@ a {
   color: var(--text-muted);
 }
 
-.locale-switcher {
+.site-chrome {
   position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.theme-switcher {
+  display: grid;
+  place-items: center;
+  padding: 0.375rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.theme-switcher:hover {
+  color: var(--text);
+}
+
+.theme-switcher__icon {
+  grid-area: 1 / 1;
+}
+
+html[data-theme="dark"] .theme-switcher__icon--moon,
+html[data-theme="light"] .theme-switcher__icon--sun {
+  display: none;
 }
 
 .locale-switcher__list {
@@ -139,7 +215,6 @@ a {
   letter-spacing: 0.02em;
   color: var(--text-muted);
   border-radius: var(--radius-sm);
-  transition: color 0.15s var(--ease-out);
 }
 
 .locale-switcher__link:hover {
