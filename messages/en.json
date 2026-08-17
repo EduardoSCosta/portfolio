@@ -8,5 +8,9 @@
   },
   "LocaleSwitcher": {
     "label": "Language"
+  },
+  "ThemeSwitcher": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
   }
 }
