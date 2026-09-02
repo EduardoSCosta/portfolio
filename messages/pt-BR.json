@@ -3,8 +3,12 @@
     "title": "Eduardo | Portfolio",
     "description": "Desenvolvedor de software"
   },
-  "HomePage": {
-    "tagline": "Desenvolvedor de software"
+  "Hero": {
+    "subhead": "Engenheiro full-stack que coloca produtos no ar.",
+    "lede": "Mais de quatro anos construindo aplicações web e mobile do começo ao fim. APIs em Rails, interfaces React acessíveis.",
+    "primaryCta": "Começar uma conversa",
+    "secondaryCta": "Baixar currículo",
+    "scrollCue": "Ver os projetos"
   },
   "LocaleSwitcher": {
     "label": "Idioma"

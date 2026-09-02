@@ -1,13 +1,9 @@
-import { getTranslations } from "next-intl/server";
-import styles from "./page.module.css";
+import { Hero } from "@/components/hero";
 
-export default async function Home() {
-  const t = await getTranslations("HomePage");
-
+export default function Home() {
   return (
-    <main className={styles.hero}>
-      <h1 className={styles.name}>Eduardo</h1>
-      <p className={styles.tagline}>{t("tagline")}</p>
+    <main>
+      <Hero />
     </main>
   );
 }
