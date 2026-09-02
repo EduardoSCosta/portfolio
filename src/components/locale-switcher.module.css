@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  display: block;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.link[aria-current="page"] {
+  color: var(--accent-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link {
+    transition: color var(--theme-duration) var(--ease-out);
+  }
+}

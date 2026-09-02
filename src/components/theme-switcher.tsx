@@ -6,6 +6,7 @@ import { MoonIcon } from "@/components/icons/moon";
 import { SunIcon } from "@/components/icons/sun";
 import { setTheme } from "@/lib/theme-actions";
 import { getNextTheme, type Theme } from "@/lib/theme";
+import styles from "./theme-switcher.module.css";
 
 export function ThemeSwitcher({ theme: initialTheme }: { theme: Theme }) {
   const t = useTranslations("ThemeSwitcher");
@@ -27,17 +28,17 @@ export function ThemeSwitcher({ theme: initialTheme }: { theme: Theme }) {
   return (
     <button
       type="button"
-      className="theme-switcher"
+      className={styles.root}
       onClick={handleToggle}
       aria-label={label}
     >
       <SunIcon
-        className="theme-switcher__icon theme-switcher__icon--sun"
+        className={`${styles.icon} ${styles.iconSun}`}
         width={18}
         height={18}
       />
       <MoonIcon
-        className="theme-switcher__icon theme-switcher__icon--moon"
+        className={`${styles.icon} ${styles.iconMoon}`}
         width={18}
         height={18}
       />
