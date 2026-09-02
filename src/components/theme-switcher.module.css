@@ -23,7 +23,18 @@
   grid-area: 1 / 1;
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 :global(html[data-theme="dark"]) .iconMoon,
-:global(html[data-theme="light"]) .iconSun {
+:global(html[data-theme="dark"]) .labelMoon,
+:global(html[data-theme="light"]) .iconSun,
+:global(html[data-theme="light"]) .labelSun {
   display: none;
 }

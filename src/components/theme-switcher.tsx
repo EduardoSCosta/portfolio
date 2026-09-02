@@ -1,37 +1,21 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { startTransition, useState } from "react";
+import { useTheme } from "next-themes";
 import { MoonIcon } from "@/components/icons/moon";
 import { SunIcon } from "@/components/icons/sun";
-import { setTheme } from "@/lib/theme-actions";
-import { getNextTheme, type Theme } from "@/lib/theme";
 import styles from "./theme-switcher.module.css";
 
-export function ThemeSwitcher({ theme: initialTheme }: { theme: Theme }) {
+export function ThemeSwitcher() {
   const t = useTranslations("ThemeSwitcher");
-  const [theme, setThemeState] = useState(initialTheme);
+  const { theme, setTheme } = useTheme();
 
   function handleToggle() {
-    const next = getNextTheme(theme);
-
-    document.documentElement.dataset.theme = next;
-    setThemeState(next);
-
-    startTransition(() => {
-      void setTheme(next);
-    });
+    setTheme(theme === "light" ? "dark" : "light");
   }
 
-  const label = theme === "dark" ? t("switchToLight") : t("switchToDark");
-
   return (
-    <button
-      type="button"
-      className={styles.root}
-      onClick={handleToggle}
-      aria-label={label}
-    >
+    <button type="button" className={styles.root} onClick={handleToggle}>
       <SunIcon
         className={`${styles.icon} ${styles.iconSun}`}
         width={18}
@@ -42,6 +26,12 @@ export function ThemeSwitcher({ theme: initialTheme }: { theme: Theme }) {
         width={18}
         height={18}
       />
+      <span className={`${styles.srOnly} ${styles.labelSun}`}>
+        {t("switchToLight")}
+      </span>
+      <span className={`${styles.srOnly} ${styles.labelMoon}`}>
+        {t("switchToDark")}
+      </span>
     </button>
   );
 }
