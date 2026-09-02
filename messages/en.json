@@ -3,8 +3,12 @@
     "title": "Eduardo | Portfolio",
     "description": "Software developer"
   },
-  "HomePage": {
-    "tagline": "Software developer"
+  "Hero": {
+    "subhead": "Full-stack engineer building products that ship.",
+    "lede": "Over four years shipping web and mobile products end to end — from Rails APIs to accessible React interfaces.",
+    "primaryCta": "Start a conversation",
+    "secondaryCta": "Download CV",
+    "scrollCue": "See the work"
   },
   "LocaleSwitcher": {
     "label": "Language"
