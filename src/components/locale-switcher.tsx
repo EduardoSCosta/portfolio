@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import styles from "./locale-switcher.module.css";
 
 const locales = [
   { code: "en" as const, label: "EN" },
@@ -14,14 +15,14 @@ export function LocaleSwitcher() {
   const t = useTranslations("LocaleSwitcher");
 
   return (
-    <nav className="locale-switcher" aria-label={t("label")}>
-      <ul className="locale-switcher__list">
+    <nav aria-label={t("label")}>
+      <ul className={styles.list}>
         {locales.map(({ code, label }) => (
           <li key={code}>
             <Link
               href={pathname}
               locale={code}
-              className="locale-switcher__link"
+              className={styles.link}
               aria-current={locale === code ? "page" : undefined}
               scroll={false}
             >

@@ -9,6 +9,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { routing } from "@/i18n/routing";
 import { parseTheme, THEME_COOKIE } from "@/lib/theme";
 import "../globals.css";
+import styles from "./layout.module.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,7 +50,7 @@ export default async function LocaleLayout({
     <html lang={locale} data-theme={theme}>
       <body className={geistSans.variable}>
         <NextIntlClientProvider messages={messages}>
-          <div className="site-chrome">
+          <div className={styles.chrome}>
             <LocaleSwitcher />
             <ThemeSwitcher theme={theme} />
           </div>
