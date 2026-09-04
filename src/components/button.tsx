@@ -2,20 +2,50 @@ import type { ComponentProps } from "react";
 
 import styles from "./button.module.css";
 
-type ButtonProps = ComponentProps<"button"> & {
+type BaseProps = {
   variant?: "primary" | "ghost";
+  size?: "default" | "compact";
+  className?: string;
 };
+
+type ButtonAsButton = BaseProps &
+  ComponentProps<"button"> & {
+    href?: never;
+  };
+
+type ButtonAsLink = BaseProps &
+  ComponentProps<"a"> & {
+    href: string;
+  };
+
+type ButtonProps = ButtonAsButton | ButtonAsLink;
+
+function getClassName(
+  variant: "primary" | "ghost",
+  size: "default" | "compact",
+  className?: string,
+) {
+  return [styles.root, styles[variant], styles[size], className]
+    .filter(Boolean)
+    .join(" ");
+}
 
 export function Button({
   variant = "primary",
-  type = "button",
+  size = "default",
+  className,
   ...props
 }: ButtonProps) {
-  return (
-    <button
-      type={type}
-      className={`${styles.root} ${styles[variant]}`}
-      {...props}
-    />
-  );
+  const classes = getClassName(variant, size, className);
+
+  if ("href" in props && props.href) {
+    const { href, ...anchorProps } = props as ButtonAsLink;
+
+    return <a href={href} className={classes} {...anchorProps} />;
+  }
+
+  const buttonProps = props as ButtonAsButton;
+  const { type = "button", ...rest } = buttonProps;
+
+  return <button type={type} className={classes} {...rest} />;
 }

@@ -2,17 +2,17 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import styles from "./locale-switcher.module.css";
+import styles from "./locale-switch.module.css";
 
 const locales = [
   { code: "en" as const, label: "EN" },
   { code: "pt-BR" as const, label: "PT" },
 ];
 
-export function LocaleSwitcher() {
+export function LocaleSwitch() {
   const locale = useLocale();
   const pathname = usePathname();
-  const t = useTranslations("LocaleSwitcher");
+  const t = useTranslations("LocaleSwitch");
 
   return (
     <nav aria-label={t("label")}>

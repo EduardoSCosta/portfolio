@@ -1,3 +1,9 @@
+@property --bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #08090a;
+}
+
 :root,
 html[data-theme="dark"] {
   --bg: #08090a;
@@ -94,12 +100,11 @@ html {
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+    transition: --bg var(--theme-duration) var(--ease-out);
   }
 
   body {
-    transition:
-      background-color var(--theme-duration) var(--ease-out),
-      color var(--theme-duration) var(--ease-out);
+    transition: color var(--theme-duration) var(--ease-out);
   }
 
   :focus-visible {

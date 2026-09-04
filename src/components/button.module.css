@@ -41,6 +41,12 @@
   background-color: var(--surface-hover);
 }
 
+.compact {
+  height: 34px;
+  padding-inline: 14px;
+  font-size: 0.8125rem;
+}
+
 .root:disabled {
   cursor: not-allowed;
   opacity: 0.55;

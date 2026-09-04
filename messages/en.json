@@ -10,10 +10,16 @@
     "secondaryCta": "Download CV",
     "scrollCue": "See the work"
   },
-  "LocaleSwitcher": {
+  "Nav": {
+    "label": "Sections",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "LocaleSwitch": {
     "label": "Language"
   },
-  "ThemeSwitcher": {
+  "ThemeSwitch": {
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme"
   }
