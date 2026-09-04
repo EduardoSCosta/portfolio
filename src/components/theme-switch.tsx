@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { MoonIcon } from "@/components/icons/moon";
 import { SunIcon } from "@/components/icons/sun";
-import styles from "./theme-switcher.module.css";
+import styles from "./theme-switch.module.css";
 
-export function ThemeSwitcher() {
-  const t = useTranslations("ThemeSwitcher");
+export function ThemeSwitch() {
+  const t = useTranslations("ThemeSwitch");
   const { theme, setTheme } = useTheme();
 
   function handleToggle() {

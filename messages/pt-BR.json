@@ -10,10 +10,16 @@
     "secondaryCta": "Baixar currículo",
     "scrollCue": "Ver os projetos"
   },
-  "LocaleSwitcher": {
+  "Nav": {
+    "label": "Seções",
+    "work": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "LocaleSwitch": {
     "label": "Idioma"
   },
-  "ThemeSwitcher": {
+  "ThemeSwitch": {
     "switchToLight": "Alternar para tema claro",
     "switchToDark": "Alternar para tema escuro"
   }

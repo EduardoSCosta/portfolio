@@ -4,11 +4,9 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { ThemeSwitcher } from "@/components/theme-switcher";
+import { Navbar } from "@/components/navbar";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
-import styles from "./layout.module.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,10 +61,7 @@ export default async function LocaleLayout({
           enableSystem={false}
         >
           <NextIntlClientProvider messages={messages}>
-            <div className={styles.chrome}>
-              <LocaleSwitcher />
-              <ThemeSwitcher />
-            </div>
+            <Navbar />
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

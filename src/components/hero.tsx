@@ -4,9 +4,9 @@ import { Button } from "@/components/button";
 import { ChevronDownIcon } from "@/components/icons/chevron-down";
 import { DownloadIcon } from "@/components/icons/download";
 
-import styles from "./hero.module.css";
+import { siteName } from "@/lib/site";
 
-const siteName = "Eduardo Souza";
+import styles from "./hero.module.css";
 
 export async function Hero() {
   const t = await getTranslations("Hero");
