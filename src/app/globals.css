@@ -35,18 +35,18 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --bg: #f3f4f6;
-  --bg-raised: #e8eaed;
+  --bg: #f6f7f8;
+  --bg-raised: #eceef0;
   --surface: #ffffff;
-  --surface-hover: #f0f1f3;
+  --surface-hover: #e8eaed;
 
-  --border: #d8dbe0;
-  --border-strong: #c4c8cf;
+  --border: #e2e4e8;
+  --border-strong: #c9cdd3;
   --border-hover: #b8bcc4;
 
-  --text: #111318;
-  --text-secondary: #4b5059;
-  --text-muted: #6b7280;
+  --text: #111214;
+  --text-secondary: #5c616a;
+  --text-muted: #6e737c;
 
   --accent: #c2410c;
   --accent-hover: #ad390a;
