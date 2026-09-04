@@ -15,22 +15,19 @@ export function LocaleSwitch() {
   const t = useTranslations("LocaleSwitch");
 
   return (
-    <nav aria-label={t("label")}>
-      <ul className={styles.list}>
-        {locales.map(({ code, label }) => (
-          <li key={code}>
-            <Link
-              href={pathname}
-              locale={code}
-              className={styles.link}
-              aria-current={locale === code ? "page" : undefined}
-              scroll={false}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <nav className={styles.group} aria-label={t("label")}>
+      {locales.map(({ code, label }) => (
+        <Link
+          key={code}
+          href={pathname}
+          locale={code}
+          className={styles.option}
+          aria-current={locale === code ? "page" : undefined}
+          scroll={false}
+        >
+          {label}
+        </Link>
+      ))}
     </nav>
   );
 }
