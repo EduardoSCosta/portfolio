@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server";
 
-import { Button } from "@/components/button";
 import { ChevronDownIcon } from "@/components/icons/chevron-down";
 import { DownloadIcon } from "@/components/icons/download";
-
+import { Button } from "@/components/ui/button";
+import ui from "@/components/ui/ui.module.css";
 import { siteName } from "@/lib/site";
 
 import styles from "./hero.module.css";
@@ -13,7 +13,7 @@ export async function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={`${styles.shell} ${styles.inner}`}>
+      <div className={`${ui.shell} ${styles.inner}`}>
         <h1 className={styles.headline}>{siteName}</h1>
         <p className={styles.subhead}>{t("subhead")}</p>
         <p className={styles.lede}>{t("lede")}</p>
@@ -27,10 +27,10 @@ export async function Hero() {
         </div>
       </div>
 
-      <span className={styles.scrollCue}>
+      <a href="#work" className={styles.scrollCue}>
         {t("scrollCue")}
         <ChevronDownIcon width={14} height={14} />
-      </span>
+      </a>
     </section>
   );
 }
