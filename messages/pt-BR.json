@@ -14,7 +14,10 @@
     "label": "Seções",
     "work": "Projetos",
     "about": "Sobre",
-    "contact": "Contato"
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menuTitle": "Menu"
   },
   "LocaleSwitch": {
     "label": "Idioma"

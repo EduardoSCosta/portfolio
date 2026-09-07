@@ -14,7 +14,10 @@
     "label": "Sections",
     "work": "Work",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Menu"
   },
   "LocaleSwitch": {
     "label": "Language"
