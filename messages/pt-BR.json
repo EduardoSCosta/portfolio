@@ -4,15 +4,24 @@
     "description": "Desenvolvedor de software"
   },
   "Hero": {
-    "subhead": "Engenheiro full-stack que coloca produtos no ar.",
-    "lede": "Mais de quatro anos construindo aplicações web e mobile do começo ao fim. APIs em Rails, interfaces React acessíveis.",
-    "primaryCta": "Começar uma conversa",
+    "subhead": "Engenheiro full-stack. Coloco produtos web e mobile no ar.",
+    "lede": "Faço isso há mais de quatro anos, do começo ao fim. APIs em Rails e interfaces React acessíveis.",
+    "primaryCta": "Fale comigo",
     "secondaryCta": "Baixar currículo",
     "scrollCue": "Ver os projetos"
+  },
+  "Work": {
+    "heading": "Projetos",
+    "liveSite": "Ver no ar",
+    "source": "Código"
   },
   "Nav": {
     "label": "Seções",
     "work": "Projetos",
+    "experience": "Experiência",
+    "skills": "Habilidades",
+    "openSource": "Open source",
+    "education": "Formação",
     "about": "Sobre",
     "contact": "Contato",
     "openMenu": "Abrir menu",

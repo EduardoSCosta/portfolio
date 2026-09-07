@@ -5,6 +5,9 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  images: {
+    qualities: [75, 90],
+  },
 };
 
 export default withNextIntl(nextConfig);
