@@ -15,6 +15,24 @@
     "liveSite": "Live site",
     "source": "Source"
   },
+  "Experience": {
+    "heading": "Experience",
+    "present": "Present",
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
+  },
   "Nav": {
     "label": "Sections",
     "work": "Work",
