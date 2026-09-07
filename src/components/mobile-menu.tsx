@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 
-import { Button } from "@/components/button";
+import { Button } from "@/components/ui/button";
 import { CloseIcon } from "@/components/icons/close";
 import { MenuIcon } from "@/components/icons/menu";
 import { LocaleSwitch } from "@/components/locale-switch";

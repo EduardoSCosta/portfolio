@@ -1,9 +1,10 @@
 import { getTranslations } from "next-intl/server";
 
-import { Button } from "@/components/button";
 import { LocaleSwitch } from "@/components/locale-switch";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { Button } from "@/components/ui/button";
+import ui from "@/components/ui/ui.module.css";
 import { Link } from "@/i18n/navigation";
 import { siteName } from "@/lib/site";
 
@@ -14,7 +15,7 @@ export async function Navbar() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.inner}>
+      <div className={`${ui.shell} ${styles.inner}`}>
         <Link href="/" className={styles.brand}>
           {siteName}
         </Link>

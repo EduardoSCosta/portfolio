@@ -23,6 +23,7 @@ html[data-theme="dark"] {
   --accent-hover: #ad390a;
   --accent-active: #8f2f08;
   --accent-text: #e8834a;
+  --accent-text-hover: #f79e70;
   --accent-fg: #ffffff;
 
   --success: #3dd68c;
@@ -52,6 +53,7 @@ html[data-theme="light"] {
   --accent-hover: #ad390a;
   --accent-active: #8f2f08;
   --accent-text: #9a3412;
+  --accent-text-hover: #7c2d12;
   --accent-fg: #ffffff;
 
   --success: #059669;
@@ -67,6 +69,7 @@ html[data-theme="light"] {
   --radius-sm: 6px;
   --radius: 8px;
   --radius-lg: 12px;
+  --radius-pill: 999px;
 
   --shell: 1120px;
   --gutter: 24px;
