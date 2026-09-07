@@ -15,6 +15,9 @@
     "liveSite": "Live site",
     "source": "Source"
   },
+  "OpenSource": {
+    "heading": "Open source"
+  },
   "Experience": {
     "heading": "Experience",
     "present": "Present",
