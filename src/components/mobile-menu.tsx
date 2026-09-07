@@ -17,8 +17,7 @@ const DESKTOP_MQ = "(min-width: 64rem)";
 
 type MobileMenuLabels = {
   label: string;
-  work: string;
-  about: string;
+  sections: { href: string; label: string }[];
   contact: string;
   openMenu: string;
   closeMenu: string;
@@ -101,12 +100,16 @@ export function MobileMenu({ labels }: { labels: MobileMenuLabels }) {
           </div>
 
           <nav className={styles.nav} aria-label={labels.label}>
-            <a href="#work" className={styles.navLink} onClick={close}>
-              {labels.work}
-            </a>
-            <a href="#about" className={styles.navLink} onClick={close}>
-              {labels.about}
-            </a>
+            {labels.sections.map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className={styles.navLink}
+                onClick={close}
+              >
+                {label}
+              </a>
+            ))}
           </nav>
 
           <div className={styles.footer}>

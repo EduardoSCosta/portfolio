@@ -5,10 +5,13 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Button } from "@/components/ui/button";
 import ui from "@/components/ui/ui.module.css";
+import { navSections } from "@/content/sections";
 import { Link } from "@/i18n/navigation";
 import { siteName } from "@/lib/site";
 
 import styles from "./navbar.module.css";
+
+const menuSections = navSections.filter((section) => section.id !== "contact");
 
 export async function Navbar() {
   const t = await getTranslations("Nav");
@@ -21,12 +24,11 @@ export async function Navbar() {
         </Link>
 
         <nav className={styles.sections} aria-label={t("label")}>
-          <a href="#work" className={styles.sectionLink}>
-            {t("work")}
-          </a>
-          <a href="#about" className={styles.sectionLink}>
-            {t("about")}
-          </a>
+          {navSections.map(({ id, messageKey }) => (
+            <a key={id} href={`#${id}`} className={styles.sectionLink}>
+              {t(messageKey)}
+            </a>
+          ))}
         </nav>
 
         <div className={styles.actions}>
@@ -45,8 +47,10 @@ export async function Navbar() {
           <MobileMenu
             labels={{
               label: t("label"),
-              work: t("work"),
-              about: t("about"),
+              sections: menuSections.map(({ id, messageKey }) => ({
+                href: `#${id}`,
+                label: t(messageKey),
+              })),
               contact: t("contact"),
               openMenu: t("openMenu"),
               closeMenu: t("closeMenu"),
