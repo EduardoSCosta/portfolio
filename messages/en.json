@@ -4,15 +4,24 @@
     "description": "Software developer"
   },
   "Hero": {
-    "subhead": "Full-stack engineer building products that ship.",
-    "lede": "Over four years shipping web and mobile products end to end — from Rails APIs to accessible React interfaces.",
-    "primaryCta": "Start a conversation",
-    "secondaryCta": "Download CV",
+    "subhead": "Full-stack engineer. I ship web and mobile products.",
+    "lede": "I've been doing this for over four years, from start to finish. Rails APIs and accessible React interfaces.",
+    "primaryCta": "Get in touch",
+    "secondaryCta": "Download resume",
     "scrollCue": "See the work"
+  },
+  "Work": {
+    "heading": "Selected work",
+    "liveSite": "Live site",
+    "source": "Source"
   },
   "Nav": {
     "label": "Sections",
     "work": "Work",
+    "experience": "Experience",
+    "skills": "Skills",
+    "openSource": "Open source",
+    "education": "Education",
     "about": "About",
     "contact": "Contact",
     "openMenu": "Open menu",
