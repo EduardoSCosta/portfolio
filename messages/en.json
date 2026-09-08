@@ -15,6 +15,16 @@
     "liveSite": "Live site",
     "source": "Source"
   },
+  "Skills": {
+    "heading": "Skills",
+    "groups": {
+      "languages": "Languages",
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "tools": "Tooling"
+    },
+    "spokenLabel": "Spoken languages"
+  },
   "OpenSource": {
     "heading": "Open source"
   },
