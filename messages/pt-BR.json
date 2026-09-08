@@ -15,6 +15,16 @@
     "liveSite": "Ver no ar",
     "source": "Código"
   },
+  "Skills": {
+    "heading": "Habilidades",
+    "groups": {
+      "languages": "Linguagens",
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "tools": "Ferramentas"
+    },
+    "spokenLabel": "Idiomas"
+  },
   "OpenSource": {
     "heading": "Open source"
   },
