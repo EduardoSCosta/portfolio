@@ -5,7 +5,7 @@
   },
   "Hero": {
     "subhead": "Full-stack engineer. I ship web and mobile products.",
-    "lede": "I've been doing this for over four years, from start to finish. Rails APIs and accessible React interfaces.",
+    "lede": "I've been doing this for nearly 5 years, from start to finish. Rails APIs and accessible React interfaces.",
     "primaryCta": "Get in touch",
     "secondaryCta": "Download resume",
     "scrollCue": "See the work"
@@ -30,6 +30,14 @@
   },
   "Education": {
     "heading": "Education"
+  },
+  "About": {
+    "heading": "About",
+    "role": "Full-stack engineer",
+    "bio": "I am a Software Engineer with nearly 5 years of experience in full-stack development of efficient, robust, and scalable systems. Throughout my career, I have worked on numerous projects, collaborating with diverse teams and utilizing a wide range of technologies, consistently focusing on solving problems and delivering high-quality solutions that meet user needs.",
+    "photoAlt": "Portrait of Eduardo Souza",
+    "linksLabel": "Profiles and email",
+    "email": "Email"
   },
   "Experience": {
     "heading": "Experience",

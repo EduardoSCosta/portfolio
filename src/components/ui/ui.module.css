@@ -52,3 +52,17 @@
     transform: translate(2px, -2px);
   }
 }
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-muted);
+  transition: color 160ms var(--ease-out);
+}
+
+.iconLink:hover {
+  color: var(--text);
+}
