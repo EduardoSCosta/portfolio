@@ -1,0 +1,24 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: 28px 40px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-end: -11px;
+}

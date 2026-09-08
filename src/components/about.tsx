@@ -1,32 +1,14 @@
 import Image from "next/image";
 import { hasLocale } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
-import type { ReactNode, SVGProps } from "react";
 
 import { routing } from "@/i18n/routing";
-import {
-  getProfileLinks,
-  location,
-  profilePhoto,
-  siteName,
-  type ProfileLinkIcon,
-} from "@/lib/site";
+import { location, profilePhoto, siteName } from "@/lib/site";
 
-import { GitHubIcon } from "./icons/github";
-import { LinkedInIcon } from "./icons/linkedin";
-import { MailIcon } from "./icons/mail";
 import { MapPinIcon } from "./icons/map-pin";
+import { ProfileLinks } from "./profile-links";
 import ui from "./ui/ui.module.css";
 import styles from "./about.module.css";
-
-const profileIcons: Record<
-  ProfileLinkIcon,
-  (props: SVGProps<SVGSVGElement>) => ReactNode
-> = {
-  github: GitHubIcon,
-  linkedin: LinkedInIcon,
-  mail: MailIcon,
-};
 
 export async function About() {
   const [t, locale] = await Promise.all([
@@ -37,8 +19,6 @@ export async function About() {
   const loc = hasLocale(routing.locales, locale)
     ? locale
     : routing.defaultLocale;
-
-  const links = getProfileLinks({ email: t("email") });
 
   return (
     <section id="about" className={styles.section}>
@@ -71,27 +51,7 @@ export async function About() {
 
         <div className={styles.copy}>
           <p className={styles.bio}>{t("bio")}</p>
-          {links.length > 0 ? (
-            <nav className={styles.links} aria-label={t("linksLabel")}>
-              {links.map((link) => {
-                const Icon = profileIcons[link.icon];
-
-                return (
-                  <a
-                    key={link.icon}
-                    href={link.href}
-                    {...(link.external
-                      ? { target: "_blank", rel: "noreferrer noopener" }
-                      : {})}
-                    aria-label={link.label}
-                    className={ui.iconLink}
-                  >
-                    <Icon width={18} height={18} />
-                  </a>
-                );
-              })}
-            </nav>
-          ) : null}
+          <ProfileLinks className={styles.links} />
         </div>
       </div>
     </section>

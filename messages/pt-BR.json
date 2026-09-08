@@ -76,5 +76,8 @@
   "ThemeSwitch": {
     "switchToLight": "Alternar para tema claro",
     "switchToDark": "Alternar para tema escuro"
+  },
+  "Footer": {
+    "rights": "Todos os direitos reservados."
   }
 }
