@@ -1,3 +1,4 @@
+import { Education } from "@/components/education";
 import { Experience } from "@/components/experience";
 import { Hero } from "@/components/hero";
 import { OpenSource } from "@/components/open-source";
@@ -10,8 +11,9 @@ export default function Home() {
       <Hero />
       <Work />
       <Experience />
-      <Skills />
       <OpenSource />
+      <Skills />
+      <Education />
     </main>
   );
 }
