@@ -1,3 +1,4 @@
+import { About } from "@/components/about";
 import { Education } from "@/components/education";
 import { Experience } from "@/components/experience";
 import { Hero } from "@/components/hero";
@@ -14,6 +15,7 @@ export default function Home() {
       <OpenSource />
       <Skills />
       <Education />
+      <About />
     </main>
   );
 }

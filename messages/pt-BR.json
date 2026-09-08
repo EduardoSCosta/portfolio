@@ -5,7 +5,7 @@
   },
   "Hero": {
     "subhead": "Engenheiro full-stack. Coloco produtos web e mobile no ar.",
-    "lede": "Faço isso há mais de quatro anos, do começo ao fim. APIs em Rails e interfaces React acessíveis.",
+    "lede": "Faço isso há quase 5 anos, do começo ao fim. APIs em Rails e interfaces React acessíveis.",
     "primaryCta": "Fale comigo",
     "secondaryCta": "Baixar currículo",
     "scrollCue": "Ver os projetos"
@@ -30,6 +30,14 @@
   },
   "Education": {
     "heading": "Formação"
+  },
+  "About": {
+    "heading": "Sobre",
+    "role": "Engenheiro full-stack",
+    "bio": "Sou Engenheiro de Software com quase 5 anos de experiência em desenvolvimento full-stack de sistemas eficientes, robustos e escaláveis. Na minha carreira, atuei em vários projetos, colaborando com diversas equipes e utilizando uma ampla variedade de tecnologias, tendo como foco sempre entregar soluções de alta qualidade que atendam às necessidades dos usuários.",
+    "photoAlt": "Retrato de Eduardo Souza",
+    "linksLabel": "Perfis e e-mail",
+    "email": "E-mail"
   },
   "Experience": {
     "heading": "Experiência",
