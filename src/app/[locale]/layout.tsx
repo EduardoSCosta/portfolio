@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
@@ -63,6 +64,7 @@ export default async function LocaleLayout({
           <NextIntlClientProvider messages={messages}>
             <Navbar />
             {children}
+            <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
