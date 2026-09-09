@@ -5,7 +5,7 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Button } from "@/components/ui/button";
 import ui from "@/components/ui/ui.module.css";
-import { navSections } from "@/content/sections";
+import { barSections, navSections } from "@/content/sections";
 import { Link } from "@/i18n/navigation";
 import { siteName } from "@/lib/site";
 
@@ -24,7 +24,7 @@ export async function Navbar() {
         </Link>
 
         <nav className={styles.sections} aria-label={t("label")}>
-          {navSections.map(({ id, messageKey }) => (
+          {barSections.map(({ id, messageKey }) => (
             <a key={id} href={`#${id}`} className={styles.sectionLink}>
               {t(messageKey)}
             </a>

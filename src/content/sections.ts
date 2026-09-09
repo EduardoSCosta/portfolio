@@ -9,3 +9,9 @@ export const navSections = [
 ] as const;
 
 export type NavSection = (typeof navSections)[number];
+
+const barSectionIds = ["work", "about", "contact"] as const;
+
+export const barSections = navSections.filter((section) =>
+  (barSectionIds as readonly string[]).includes(section.id),
+);
