@@ -1,4 +1,5 @@
 import { routing } from "@/i18n/routing";
+import { readEnv } from "@/lib/site";
 
 export type Locale = (typeof routing.locales)[number];
 
@@ -16,7 +17,18 @@ export type Project = {
   imageAlt: Localized;
 };
 
-export const projects: Project[] = [
+const projectLinks = {
+  sincro: {
+    liveUrl: process.env.SINCRO_LIVE_URL,
+    sourceUrl: process.env.SINCRO_SOURCE_URL,
+  },
+  portfolio: {
+    liveUrl: process.env.PORTFOLIO_LIVE_URL,
+    sourceUrl: process.env.PORTFOLIO_SOURCE_URL,
+  },
+} as const;
+
+const projectContent: Omit<Project, "liveUrl" | "sourceUrl">[] = [
   {
     slug: "sincro",
     name: "Sincro",
@@ -27,7 +39,6 @@ export const projects: Project[] = [
         "O Sincro é um sistema para gestão de máquinas pesadas. Você cadastra a frota, registra locações e ordens de serviço, acompanha combustível e manutenção, e vê custo por hora e rentabilidade de cada máquina no mesmo dashboard.",
     },
     stack: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Java"],
-    liveUrl: "https://sincro.synchsolution.com/",
     image: "/projects/sincro.png",
     imageAlt: {
       en: "Sincro dashboard with fleet KPIs, a bar chart of the most used machines, and a status chart.",
@@ -45,7 +56,6 @@ export const projects: Project[] = [
         "Este site. Um portfólio pessoal em Next.js, em inglês e português, com tema claro e escuro.",
     },
     stack: ["TypeScript", "Next.js", "React"],
-    sourceUrl: "https://github.com/EduardoSCosta/portfolio",
     image: "/projects/portfolio.png",
     imageAlt: {
       en: "Hero of this site: name, short intro, and the get in touch and resume buttons.",
@@ -54,3 +64,15 @@ export const projects: Project[] = [
     },
   },
 ];
+
+export function getProjects(): Project[] {
+  return projectContent.map((project) => {
+    const links = projectLinks[project.slug as keyof typeof projectLinks];
+
+    return {
+      ...project,
+      liveUrl: readEnv(links?.liveUrl),
+      sourceUrl: readEnv(links?.sourceUrl),
+    };
+  });
+}
