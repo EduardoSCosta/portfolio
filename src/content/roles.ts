@@ -43,6 +43,31 @@ export const roles: Role[] = [
     },
   },
   {
+    company: "Codeminer42",
+    title: {
+      en: "Software Engineer",
+      "pt-BR": "Engenheiro de Software",
+    },
+    start: "2022-01",
+    end: "2025-04",
+    highlights: {
+      en: [
+        "Maintained and extended Codeminer42's internal employee management application in Ruby on Rails used company-wide.",
+        "Rebuilt the platform's interface with Hotwire and Tailwind CSS.",
+        "Mentored 3 trainees. I guided their study plans, set technical challenges, and reviewed their pull requests.",
+        "Ran internal workshops on front-end, React Native, and contributing to open source projects.",
+        "Started in the trainee program, learning JavaScript, TypeScript, React, and Rails alongside SOLID, design patterns, and automated testing.",
+      ],
+      "pt-BR": [
+        "Mantive e evoluí o sistema interno de gestão de funcionários da Codeminer42 em Ruby on Rails, usado por toda a empresa.",
+        "Reconstruí a interface da plataforma com Hotwire e Tailwind CSS.",
+        "Mentorei 3 trainees. Orientei os planos de estudo, propus desafios técnicos e revisei os pull requests.",
+        "Ministrei workshops internos sobre front-end, React Native e contribuição para projetos open source.",
+        "Comecei no programa de trainee, aprendendo JavaScript, TypeScript, React e Rails, além de SOLID, design patterns e testes automatizados.",
+      ],
+    },
+  },
+  {
     company: "Amazon (eero)",
     title: {
       en: "Front-end Software Engineer",
@@ -153,31 +178,6 @@ export const roles: Role[] = [
         "Integrei a API de vendas da Hotmart para que a compra de um curso registrasse o inscrito automaticamente.",
         "Integrei a API da Circle para conceder e revogar o acesso às comunidades sem trabalho manual.",
         "Escrevi testes de unidade e de integração com RSpec, com 95% de cobertura nos fluxos principais de inscritos.",
-      ],
-    },
-  },
-  {
-    company: "Codeminer42",
-    title: {
-      en: "Software Engineer",
-      "pt-BR": "Engenheiro de Software",
-    },
-    start: "2022-01",
-    end: "2025-04",
-    highlights: {
-      en: [
-        "Maintained and extended Codeminer42's internal employee management application in Ruby on Rails used company-wide.",
-        "Rebuilt the platform's interface with Hotwire and Tailwind CSS.",
-        "Mentored 3 trainees. I guided their study plans, set technical challenges, and reviewed their pull requests.",
-        "Ran internal workshops on front-end, React Native, and contributing to open source projects.",
-        "Started in the trainee program, learning JavaScript, TypeScript, React, and Rails alongside SOLID, design patterns, and automated testing.",
-      ],
-      "pt-BR": [
-        "Mantive e evoluí o sistema interno de gestão de funcionários da Codeminer42 em Ruby on Rails, usado por toda a empresa.",
-        "Reconstruí a interface da plataforma com Hotwire e Tailwind CSS.",
-        "Mentorei 3 trainees. Orientei os planos de estudo, propus desafios técnicos e revisei os pull requests.",
-        "Ministrei workshops internos sobre front-end, React Native e contribuição para projetos open source.",
-        "Comecei no programa de trainee, aprendendo JavaScript, TypeScript, React e Rails, além de SOLID, design patterns e testes automatizados.",
       ],
     },
   },
