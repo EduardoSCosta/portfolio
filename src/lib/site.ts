@@ -34,6 +34,15 @@ export function getContactEmail() {
   return readEnv(process.env.CONTACT_EMAIL);
 }
 
+export function getResume(locale: Locale) {
+  const value =
+    locale === "pt-BR"
+      ? process.env.RESUME_URL_PT
+      : process.env.RESUME_URL_EN;
+
+  return readEnv(value);
+}
+
 export function getProfileLinks(copy: { email: string }): ProfileLink[] {
   const links: ProfileLink[] = [];
 
