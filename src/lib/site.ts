@@ -34,13 +34,49 @@ export function getContactEmail() {
   return readEnv(process.env.CONTACT_EMAIL);
 }
 
-export function getResume(locale: Locale) {
-  const value =
-    locale === "pt-BR"
-      ? process.env.RESUME_URL_PT
-      : process.env.RESUME_URL_EN;
+export type ResumeLink = {
+  href: string;
+  file: boolean;
+};
 
-  return readEnv(value);
+function driveFileId(url: string) {
+  const fromPath = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (fromPath) {
+    return fromPath[1];
+  }
+
+  if (
+    !/https?:\/\/(?:drive\.google\.com|drive\.usercontent\.google\.com)\//.test(
+      url,
+    )
+  ) {
+    return undefined;
+  }
+
+  return url.match(/[?&]id=([a-zA-Z0-9_-]+)/)?.[1];
+}
+
+export function toResumeHref(url: string) {
+  const id = driveFileId(url);
+  if (id) {
+    return `https://drive.google.com/uc?export=download&id=${id}`;
+  }
+
+  return url;
+}
+
+export function getResume(locale: Locale): ResumeLink | undefined {
+  const value =
+    locale === "pt-BR" ? process.env.RESUME_URL_PT : process.env.RESUME_URL_EN;
+  const raw = readEnv(value);
+  if (!raw) {
+    return undefined;
+  }
+
+  const href = toResumeHref(raw);
+  const file = Boolean(driveFileId(raw)) || /\.pdf(?:[?#]|$)/i.test(href);
+
+  return { href, file };
 }
 
 export function getProfileLinks(copy: { email: string }): ProfileLink[] {

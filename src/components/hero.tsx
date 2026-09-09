@@ -29,10 +29,11 @@ export async function Hero() {
           </Button>
           {resumeUrl ? (
             <Button
-              href={resumeUrl}
-              target="_blank"
-              rel="noreferrer noopener"
+              href={resumeUrl.href}
               variant="ghost"
+              {...(resumeUrl.file
+                ? { download: true }
+                : { target: "_blank", rel: "noreferrer noopener" })}
             >
               <DownloadIcon width={16} height={16} />
               {t("secondaryCta")}
