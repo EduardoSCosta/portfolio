@@ -6,9 +6,8 @@
   "Hero": {
     "subhead": "Full-stack engineer. I ship web and mobile products.",
     "lede": "I've been doing this for nearly 5 years, from start to finish. Rails APIs and accessible React interfaces.",
-    "primaryCta": "Get in touch",
-    "secondaryCta": "Download resume",
-    "scrollCue": "See the work"
+    "primaryCta": "See the work",
+    "secondaryCta": "Download resume"
   },
   "Work": {
     "heading": "Selected work",
