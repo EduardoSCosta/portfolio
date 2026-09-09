@@ -4,10 +4,11 @@ import { siteLogo, siteName } from "@/lib/site";
 
 type BrandProps = {
   markClassName?: string;
+  nameClassName?: string;
   priority?: boolean;
 };
 
-export function Brand({ markClassName, priority }: BrandProps) {
+export function Brand({ markClassName, nameClassName, priority }: BrandProps) {
   return (
     <>
       <Image
@@ -19,7 +20,7 @@ export function Brand({ markClassName, priority }: BrandProps) {
         unoptimized
         priority={priority}
       />
-      {siteName}
+      <span className={nameClassName}>{siteName}</span>
     </>
   );
 }

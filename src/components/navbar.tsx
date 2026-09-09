@@ -1,13 +1,13 @@
 import { getTranslations } from "next-intl/server";
 
 import { Brand } from "@/components/brand";
+import { BrandLink } from "@/components/brand-link";
 import { LocaleSwitch } from "@/components/locale-switch";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Button } from "@/components/ui/button";
 import ui from "@/components/ui/ui.module.css";
 import { barSections, navSections } from "@/content/sections";
-import { Link } from "@/i18n/navigation";
 
 import styles from "./navbar.module.css";
 
@@ -19,9 +19,13 @@ export async function Navbar() {
   return (
     <header className={styles.header}>
       <div className={`${ui.shell} ${styles.inner}`}>
-        <Link href="/" className={styles.brand}>
-          <Brand markClassName={styles.mark} priority />
-        </Link>
+        <BrandLink className={styles.brand}>
+          <Brand
+            markClassName={styles.mark}
+            nameClassName={styles.wordmark}
+            priority
+          />
+        </BrandLink>
 
         <nav className={styles.sections} aria-label={t("label")}>
           {barSections.map(({ id, messageKey }) => (
@@ -32,10 +36,6 @@ export async function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <div className={styles.controls}>
-            <ThemeSwitch />
-            <LocaleSwitch />
-          </div>
           <Button
             href="#contact"
             variant="primary"
@@ -44,6 +44,12 @@ export async function Navbar() {
           >
             {t("contact")}
           </Button>
+          <div className={styles.controls}>
+            <LocaleSwitch />
+            <div className={styles.theme}>
+              <ThemeSwitch />
+            </div>
+          </div>
           <MobileMenu
             labels={{
               label: t("label"),
