@@ -19,6 +19,10 @@ html[data-theme="dark"] {
   --text-secondary: #9ca1aa;
   --text-muted: #8a8f98;
 
+  --input-bg: #0e0f11;
+  --input-border: #2a2d31;
+  --input-border-hover: #3a3e44;
+
   --accent: #c2410c;
   --accent-hover: #ad390a;
   --accent-active: #8f2f08;
@@ -48,6 +52,10 @@ html[data-theme="light"] {
   --text: #111214;
   --text-secondary: #5c616a;
   --text-muted: #6e737c;
+
+  --input-bg: #ffffff;
+  --input-border: #8b9099;
+  --input-border-hover: #5c616a;
 
   --accent: #c2410c;
   --accent-hover: #ad390a;
@@ -171,4 +179,5 @@ a {
 
 ::placeholder {
   color: var(--text-muted);
+  opacity: 1;
 }
