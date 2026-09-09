@@ -16,6 +16,12 @@ export const profilePhoto = {
   height: 1465,
 } as const;
 
+export const siteLogo = {
+  src: "/logo.png",
+  width: 192,
+  height: 192,
+} as const;
+
 export type ProfileLinkIcon = "github" | "linkedin" | "mail";
 
 export type ProfileLink = {

@@ -98,10 +98,19 @@
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text);
+}
+
+.mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
 }
 
 .brand:hover {
