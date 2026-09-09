@@ -25,9 +25,13 @@ export type ProfileLink = {
   external: boolean;
 };
 
-function readEnv(value: string | undefined) {
+export function readEnv(value: string | undefined) {
   const trimmed = value?.trim();
   return trimmed ? trimmed : undefined;
+}
+
+export function getContactEmail() {
+  return readEnv(process.env.CONTACT_EMAIL);
 }
 
 export function getProfileLinks(copy: { email: string }): ProfileLink[] {
@@ -53,7 +57,7 @@ export function getProfileLinks(copy: { email: string }): ProfileLink[] {
     });
   }
 
-  const email = readEnv(process.env.CONTACT_EMAIL);
+  const email = getContactEmail();
   if (email) {
     links.push({
       label: copy.email,

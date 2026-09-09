@@ -39,6 +39,28 @@
     "linksLabel": "Perfis e e-mail",
     "email": "E-mail"
   },
+  "Contact": {
+    "heading": "Contato",
+    "lede": "Conte sobre a vaga ou o projeto. Leio tudo que chega aqui e respondo as mensagens que fazem sentido.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Arthur Dent",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "arthur.dent@coracaodeouro.com",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Descreva a vaga, o projeto ou a dúvida.",
+    "submit": "Enviar mensagem",
+    "submitting": "Enviando…",
+    "successTitle": "Mensagem enviada",
+    "successBody": "Obrigado. Responderei o mais breve possível.",
+    "orEmail": "Ou escreva para",
+    "errors": {
+      "name": "Informe seu nome.",
+      "email": "Informe um e-mail válido.",
+      "message": "Escreva uma mensagem.",
+      "unconfigured": "O formulário ainda não envia mensagens. Envie um e-mail.",
+      "failed": "Não foi possível enviar a mensagem. Tente novamente ou envie um e-mail."
+    }
+  },
   "Experience": {
     "heading": "Experiência",
     "present": "Atual",
