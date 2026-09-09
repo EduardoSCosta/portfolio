@@ -2,7 +2,7 @@ import Image from "next/image";
 import { hasLocale } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { projects } from "@/content/projects";
+import { getProjects } from "@/content/projects";
 import { routing } from "@/i18n/routing";
 
 import { ArrowUpRightIcon } from "./icons/arrow-up-right";
@@ -57,6 +57,7 @@ export async function Work() {
   const loc = hasLocale(routing.locales, locale)
     ? locale
     : routing.defaultLocale;
+  const projects = getProjects();
   const hasFeatured = projects.length % 2 === 1;
   const featured = hasFeatured ? projects[0] : undefined;
   const rest = hasFeatured ? projects.slice(1) : projects;
