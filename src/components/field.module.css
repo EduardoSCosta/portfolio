@@ -1,0 +1,58 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background-color: var(--bg-raised);
+  color: var(--text);
+  font-size: 0.9375rem;
+  transition:
+    border-color 160ms var(--ease-out),
+    background-color 160ms var(--ease-out);
+}
+
+.input:hover,
+.textarea:hover {
+  border-color: var(--border-hover);
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: none;
+  border-color: var(--accent-text);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.textarea {
+  min-height: 132px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.invalid {
+  border-color: var(--danger);
+}
+
+.fieldError {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--danger);
+}
+
+.fieldError svg {
+  flex-shrink: 0;
+}

@@ -39,6 +39,28 @@
     "linksLabel": "Profiles and email",
     "email": "Email"
   },
+  "Contact": {
+    "heading": "Contact",
+    "lede": "Tell me about the role or the project. I read everything that arrives here and reply to messages that fit.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Arthur Dent",
+    "emailLabel": "Email",
+    "emailPlaceholder": "arthur.dent@heartofgold.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe the role, project, or question.",
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "successTitle": "Message sent",
+    "successBody": "Thank you. I will reply as soon as possible.",
+    "orEmail": "Or write to",
+    "errors": {
+      "name": "Enter your name.",
+      "email": "Enter a valid email address.",
+      "message": "Enter a message.",
+      "unconfigured": "The form cannot send messages yet. Email me instead.",
+      "failed": "The message could not be sent. Try again, or email me instead."
+    }
+  },
   "Experience": {
     "heading": "Experience",
     "present": "Present",

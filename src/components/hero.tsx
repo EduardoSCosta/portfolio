@@ -19,7 +19,9 @@ export async function Hero() {
         <p className={styles.lede}>{t("lede")}</p>
 
         <div className={styles.actions}>
-          <Button variant="primary">{t("primaryCta")}</Button>
+          <Button href="#contact" variant="primary">
+            {t("primaryCta")}
+          </Button>
           <Button variant="ghost">
             <DownloadIcon width={16} height={16} />
             {t("secondaryCta")}
