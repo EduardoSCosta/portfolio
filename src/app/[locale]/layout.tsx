@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
+import { getSiteUrl, siteName } from "@/lib/site";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -29,11 +30,31 @@ export async function generateMetadata({
   params,
 }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const [t, hero] = await Promise.all([
+    getTranslations({ locale, namespace: "Metadata" }),
+    getTranslations({ locale, namespace: "Hero" }),
+  ]);
+
+  const title = t("title");
+  const description = hero("subhead");
 
   return {
-    title: t("title"),
+    metadataBase: new URL(getSiteUrl()),
+    title,
     description: t("description"),
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}`,
+      siteName,
+      locale: locale === "pt-BR" ? "pt_BR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 

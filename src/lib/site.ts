@@ -36,6 +36,33 @@ export function readEnv(value: string | undefined) {
   return trimmed ? trimmed : undefined;
 }
 
+function toOrigin(value: string) {
+  const trimmed = value.replace(/\/$/, "");
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  return `https://${trimmed}`;
+}
+
+export function getSiteUrl() {
+  const live = readEnv(process.env.PORTFOLIO_LIVE_URL);
+  if (live) {
+    return toOrigin(live);
+  }
+
+  const vercelProduction = readEnv(process.env.VERCEL_PROJECT_PRODUCTION_URL);
+  if (vercelProduction) {
+    return toOrigin(vercelProduction);
+  }
+
+  const vercel = readEnv(process.env.VERCEL_URL);
+  if (vercel) {
+    return toOrigin(vercel);
+  }
+
+  return "http://localhost:3000";
+}
+
 export function getContactEmail() {
   return readEnv(process.env.CONTACT_EMAIL);
 }
