@@ -4,12 +4,12 @@ import { useEffect, useId, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 
 import { Brand } from "@/components/brand";
+import { BrandLink } from "@/components/brand-link";
 import { Button } from "@/components/ui/button";
 import { CloseIcon } from "@/components/icons/close";
 import { MenuIcon } from "@/components/icons/menu";
 import { LocaleSwitch } from "@/components/locale-switch";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { Link } from "@/i18n/navigation";
 
 import styles from "./mobile-menu.module.css";
 
@@ -90,9 +90,9 @@ export function MobileMenu({ labels }: { labels: MobileMenuLabels }) {
           </h2>
 
           <div className={styles.sheetHeader}>
-            <Link href="/" className={styles.brand} onClick={close}>
+            <BrandLink className={styles.brand} onClick={close}>
               <Brand markClassName={styles.mark} />
-            </Link>
+            </BrandLink>
             <button type="button" className={styles.close} onClick={close}>
               <CloseIcon />
               <span className={styles.srOnly}>{labels.closeMenu}</span>
