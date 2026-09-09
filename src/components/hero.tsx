@@ -1,7 +1,6 @@
 import { hasLocale } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { ChevronDownIcon } from "@/components/icons/chevron-down";
 import { DownloadIcon } from "@/components/icons/download";
 import { Button } from "@/components/ui/button";
 import ui from "@/components/ui/ui.module.css";
@@ -11,10 +10,7 @@ import { getResume, siteName } from "@/lib/site";
 import styles from "./hero.module.css";
 
 export async function Hero() {
-  const [t, locale] = await Promise.all([
-    getTranslations("Hero"),
-    getLocale(),
-  ]);
+  const [t, locale] = await Promise.all([getTranslations("Hero"), getLocale()]);
   const loc = hasLocale(routing.locales, locale)
     ? locale
     : routing.defaultLocale;
@@ -28,7 +24,7 @@ export async function Hero() {
         <p className={styles.lede}>{t("lede")}</p>
 
         <div className={styles.actions}>
-          <Button href="#contact" variant="primary">
+          <Button href="#work" variant="primary">
             {t("primaryCta")}
           </Button>
           {resumeUrl ? (
@@ -44,11 +40,6 @@ export async function Hero() {
           ) : null}
         </div>
       </div>
-
-      <a href="#work" className={styles.scrollCue}>
-        {t("scrollCue")}
-        <ChevronDownIcon width={14} height={14} />
-      </a>
     </section>
   );
 }
