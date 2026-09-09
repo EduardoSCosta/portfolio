@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
+import { Brand } from "@/components/brand";
 import { LocaleSwitch } from "@/components/locale-switch";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -7,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import ui from "@/components/ui/ui.module.css";
 import { barSections, navSections } from "@/content/sections";
 import { Link } from "@/i18n/navigation";
-import { siteName } from "@/lib/site";
 
 import styles from "./navbar.module.css";
 
@@ -20,7 +20,7 @@ export async function Navbar() {
     <header className={styles.header}>
       <div className={`${ui.shell} ${styles.inner}`}>
         <Link href="/" className={styles.brand}>
-          {siteName}
+          <Brand markClassName={styles.mark} priority />
         </Link>
 
         <nav className={styles.sections} aria-label={t("label")}>

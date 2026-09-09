@@ -3,13 +3,13 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 
+import { Brand } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { CloseIcon } from "@/components/icons/close";
 import { MenuIcon } from "@/components/icons/menu";
 import { LocaleSwitch } from "@/components/locale-switch";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Link } from "@/i18n/navigation";
-import { siteName } from "@/lib/site";
 
 import styles from "./mobile-menu.module.css";
 
@@ -91,7 +91,7 @@ export function MobileMenu({ labels }: { labels: MobileMenuLabels }) {
 
           <div className={styles.sheetHeader}>
             <Link href="/" className={styles.brand} onClick={close}>
-              {siteName}
+              <Brand markClassName={styles.mark} />
             </Link>
             <button type="button" className={styles.close} onClick={close}>
               <CloseIcon />
