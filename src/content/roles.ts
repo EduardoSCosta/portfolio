@@ -18,23 +18,20 @@ export const roles: Role[] = [
   {
     company: "SynchSolution",
     title: {
-      en: "Co-Founder & Front-end Software Engineer",
-      "pt-BR": "Cofundador e Engenheiro de Software Front-end",
-    },
-    description: {
-      en: "Co-founder. Built the front-end of Sincro, a multi-tenant SaaS for managing heavy machinery rentals and operations.",
-      "pt-BR":
-        "Cofundador. Construí o front-end do Sincro, um SaaS multi-tenant para gestão de locação e operação de máquinas pesadas.",
+      en: "Front-end Software Engineer",
+      "pt-BR": "Engenheiro de Software Front-end",
     },
     start: "2025-06",
     highlights: {
       en: [
+        "Built the front-end of Sincro, a multi-tenant SaaS for managing heavy machinery rentals and operations.",
         "Designed the front-end architecture in TypeScript, React, and Next.js (App Router), using Tailwind CSS and shadcn/ui. I decided the module structure, how server actions called the API, and how routes were gated by permission.",
         "Implemented JWT login, encrypted session cookies, and automatic token refresh on protected routes.",
         "Added authorization so each page and mutation checks a permission. Tenant users only see their own company.",
         "Built the screens for fleet, rentals, work orders, fuel, maintenance, clients, and operators. Forms are validated with Zod. Tables use TanStack Table. Records can be imported from spreadsheets. Operational reports download as PDF (15 report types).",
       ],
       "pt-BR": [
+        "Construí o front-end do Sincro, um SaaS multi-tenant para gestão de locação e operação de máquinas pesadas.",
         "Desenhei a arquitetura front-end em TypeScript, React e Next.js (App Router), com Tailwind CSS e shadcn/ui. Decidi a estrutura de módulos, como as server actions chamavam a API e como as rotas eram protegidas por permissão.",
         "Implementei login com JWT, cookies de sessão criptografados e renovação automática do token nas rotas protegidas.",
         "Adicionei autorização para que cada página e cada ação verifique uma permissão. Usuários de uma empresa só veem a própria empresa.",
